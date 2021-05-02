@@ -1,4 +1,6 @@
 # await-semaphore
+> NOTE: it is a fork of old [`await-semaphore`](https://www.npmjs.com/package/await-semaphore) package but with some fixes
+
 Awaitable semaphore/mutex
 
 A semaphore implementation using ES6 promises and supporting 3 styles:
