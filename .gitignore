@@ -1,3 +1,9 @@
+# IDE
+.idea/
+
+# Compiled
+dist/
+
 # Logs
 logs
 *.log

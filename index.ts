@@ -19,9 +19,9 @@ export class Semaphore {
     }
 
     public acquire() {
-        return new Promise<() => void>((res, rej) => {
-            var task = () => {
-                var released = false;
+        return new Promise<() => void>((res, _rej) => {
+            const task = () => {
+                let released = false;
                 res(() => {
                     if (!released) {
                         released = true;
