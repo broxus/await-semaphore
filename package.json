@@ -1,6 +1,6 @@
 {
   "name": "@broxus/await-semaphore",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Awaitable semaphore/mutex [Fork of await-semaphore]",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/notenoughneon/await-semaphore#readme",
   "devDependencies": {
     "@types/mocha": "^8.2.2",
+    "@types/next-tick": "^1.0.0",
     "@types/node": "^15.0.1",
     "mocha": "^8.3.2",
     "typescript": "^4.2.4"
@@ -33,5 +34,8 @@
   "files": [
     "/dist/index.js",
     "/dist/index.d.ts"
-  ]
+  ],
+  "dependencies": {
+    "next-tick": "^1.1.0"
+  }
 }

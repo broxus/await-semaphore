@@ -1,3 +1,5 @@
+import nextTick from 'next-tick';
+
 export class Semaphore {
     private tasks: (() => void)[] = [];
     count: number;
@@ -31,27 +33,23 @@ export class Semaphore {
                 });
             };
             this.tasks.push(task);
-            if (process && process.nextTick) {
-                process.nextTick(this.sched.bind(this));
-            } else {
-                setImmediate(this.sched.bind(this));
-            }
+            nextTick(this.sched.bind(this))
         });
     }
 
     public use<T>(f: () => Promise<T>) {
         return this.acquire()
-        .then(release => {
-            return f()
-            .then((res) => {
-                release();
-                return res;
-            })
-            .catch((err) => {
-                release();
-                throw err;
+            .then(release => {
+                return f()
+                    .then((res) => {
+                        release();
+                        return res;
+                    })
+                    .catch((err) => {
+                        release();
+                        throw err;
+                    });
             });
-        });
     }
 }
 
