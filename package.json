@@ -1,6 +1,6 @@
 {
   "name": "@broxus/await-semaphore",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Awaitable semaphore/mutex [Fork of await-semaphore]",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,8 +34,5 @@
   "files": [
     "/dist/index.js",
     "/dist/index.d.ts"
-  ],
-  "dependencies": {
-    "next-tick": "^1.1.0"
-  }
+  ]
 }
